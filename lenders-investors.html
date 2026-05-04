@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Lenders & Investors — GLS Solutions</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, Helvetica, sans-serif; color: #0A1628; }
+.nav-wrap { background: #fff; padding: 0 56px; display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: 1px solid #DCE7F7; position: sticky; top: 0; z-index: 100; }
+.nav-logo img { height: 30px; width: auto; display: block; }
+.nav-links { display: flex; gap: 28px; }
+.nav-link { color: #5F5E5A; font-size: 13px; text-decoration: none; }
+.nav-link:hover, .nav-link.active { color: #0C55F2; }
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.btn-ghost { color: #0A1628; font-size: 12px; padding: 7px 14px; border: 1px solid #B4B2A9; border-radius: 6px; background: transparent; cursor: pointer; text-decoration: none; }
+.btn-primary { color: #fff; font-size: 12px; padding: 7px 14px; border: none; border-radius: 6px; background: #0C55F2; font-weight: 500; cursor: pointer; text-decoration: none; display: inline-block; }
+.hero { background: #0A1628; padding: 80px 56px 88px; }
+.hero-inner { max-width: 840px; margin: 0 auto; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4A90D9; margin-bottom: 20px; }
+.hero h1 { font-size: 40px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 20px; max-width: 620px; }
+.hero p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.65; max-width: 540px; margin-bottom: 36px; }
+.hero-actions { display: flex; gap: 12px; align-items: center; }
+.btn-hero-primary { background: #0C55F2; color: #fff; font-size: 14px; font-weight: 600; padding: 13px 28px; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn-hero-ghost { background: transparent; color: rgba(255,255,255,0.7); font-size: 14px; padding: 13px 28px; border-radius: 7px; border: 1px solid rgba(255,255,255,0.25); cursor: pointer; text-decoration: none; display: inline-block; }
+.hero-cred { display: flex; gap: 40px; margin-top: 52px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+.cred-item { font-size: 13px; color: rgba(255,255,255,0.5); }
+.cred-item strong { display: block; font-size: 15px; color: #fff; margin-bottom: 3px; }
+.problem { background: #F5F8FF; padding: 72px 56px; }
+.problem-inner { max-width: 840px; margin: 0 auto; }
+.section-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #0C55F2; margin-bottom: 12px; }
+.section-headline { font-size: 28px; font-weight: 700; color: #0A1628; margin-bottom: 10px; }
+.section-sub { font-size: 15px; color: #5F5E5A; line-height: 1.65; max-width: 560px; margin-bottom: 44px; }
+.problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.problem-card { background: #fff; border: 1px solid #DCE7F7; border-radius: 10px; padding: 24px; }
+.problem-label { font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #A32D2D; margin-bottom: 10px; }
+.problem-title { font-size: 15px; font-weight: 700; color: #0A1628; margin-bottom: 8px; }
+.problem-body { font-size: 13px; color: #5F5E5A; line-height: 1.6; }
+.platform { background: #fff; padding: 80px 56px; border-top: 1px solid #DCE7F7; }
+.platform-inner { max-width: 840px; margin: 0 auto; }
+.platform-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 52px; }
+.platform-text h2 { font-size: 28px; font-weight: 700; color: #0A1628; margin-bottom: 12px; }
+.platform-text p { font-size: 14px; color: #5F5E5A; line-height: 1.7; }
+.platform-bullets { padding-top: 4px; }
+.platform-bullet { display: flex; gap: 12px; margin-bottom: 18px; align-items: flex-start; }
+.bullet-dot { width: 20px; height: 20px; background: #DCE7F7; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.bullet-dot svg { width: 10px; height: 10px; fill: none; stroke: #0C55F2; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.bullet-text strong { display: block; font-size: 13px; font-weight: 700; color: #0A1628; margin-bottom: 2px; }
+.bullet-text span { font-size: 13px; color: #5F5E5A; line-height: 1.55; }
+.arda-diagram { background: #F5F8FF; border: 1px solid #DCE7F7; border-radius: 12px; padding: 32px; }
+.arda-core { background: #0A1628; color: #fff; text-align: center; border-radius: 8px; padding: 14px 24px; margin-bottom: 20px; }
+.arda-core-title { font-size: 16px; font-weight: 700; letter-spacing: 0.05em; }
+.arda-core-sub { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+.arda-sync-label { text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #4A90D9; margin: 16px 0; }
+.arda-tier { display: grid; gap: 10px; margin-bottom: 10px; grid-template-columns: repeat(3, 1fr); }
+.arda-tile { background: #0C55F2; border-radius: 7px; padding: 10px 12px; }
+.arda-tile-light { background: #fff; border: 1px solid #DCE7F7; border-radius: 7px; padding: 10px 12px; }
+.arda-tile-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.arda-tile-light .arda-tile-title { color: #0A1628; }
+.arda-tile-sub { font-size: 11px; color: rgba(255,255,255,0.75); line-height: 1.4; }
+.arda-tile-light .arda-tile-sub { color: #5F5E5A; }
+.draws { background: #0A1628; padding: 80px 56px; }
+.draws-inner { max-width: 840px; margin: 0 auto; }
+.draws .section-tag { color: #4A90D9; }
+.draws .section-headline { color: #fff; margin-bottom: 10px; }
+.draws .section-sub { color: rgba(255,255,255,0.55); margin-bottom: 48px; }
+.draws-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.flow-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 28px 24px; }
+.flow-step-num { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A90D9; margin-bottom: 10px; }
+.flow-step h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 14px; }
+.flow-step ul { list-style: none; }
+.flow-step ul li { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.5; margin-bottom: 8px; padding-left: 14px; position: relative; }
+.flow-step ul li::before { content: '—'; position: absolute; left: 0; color: #0C55F2; }
+.draws-callout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.draws-stat { background: rgba(12,85,242,0.15); border: 1px solid rgba(12,85,242,0.3); border-radius: 8px; padding: 18px 20px; text-align: center; }
+.draws-stat-val { font-size: 19px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.draws-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); }
+.reporting { background: #fff; padding: 80px 56px; border-top: 1px solid #DCE7F7; }
+.reporting-inner { max-width: 840px; margin: 0 auto; }
+.reporting-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 44px; }
+.report-card { border: 1px solid #DCE7F7; border-radius: 10px; padding: 28px 24px; transition: border-color 0.15s; }
+.report-card:hover { border-color: #0C55F2; }
+.report-icon { width: 40px; height: 40px; background: #DCE7F7; border-radius: 9px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
+.report-icon svg { width: 20px; height: 20px; fill: none; stroke: #0C55F2; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.report-card h3 { font-size: 15px; font-weight: 700; color: #0A1628; margin-bottom: 12px; }
+.report-card ul { list-style: none; }
+.report-card ul li { font-size: 13px; color: #5F5E5A; margin-bottom: 8px; padding-left: 14px; position: relative; line-height: 1.5; }
+.report-card ul li::before { content: '→'; position: absolute; left: 0; color: #0C55F2; font-size: 11px; top: 1px; }
+.products { background: #F5F8FF; padding: 80px 56px; }
+.products-inner { max-width: 840px; margin: 0 auto; }
+.products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 44px; }
+.product-card { background: #fff; border: 1px solid #DCE7F7; border-radius: 10px; padding: 24px 26px; display: flex; align-items: flex-start; gap: 16px; }
+.product-dot { width: 10px; height: 10px; background: #0C55F2; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+.product-dot.coming { background: transparent; border: 2px solid #4A90D9; }
+.product-name { font-size: 14px; font-weight: 700; color: #0A1628; margin-bottom: 4px; }
+.product-desc { font-size: 13px; color: #5F5E5A; line-height: 1.55; }
+.product-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: #DCE7F7; color: #185FA5; margin-left: 8px; vertical-align: middle; }
+.pricing-curiosity { background: #0A1628; padding: 80px 56px; }
+.pricing-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.pricing-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4A90D9; margin-bottom: 20px; }
+.pricing-headline { font-size: 30px; font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 20px; }
+.pricing-body { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 16px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.pricing-hook { font-size: 15px; color: rgba(255,255,255,0.4); font-style: italic; margin-bottom: 36px; }
+.pricing-cta-link { display: inline-block; font-size: 14px; font-weight: 600; color: #4A90D9; border-bottom: 1px solid rgba(74,144,217,0.4); padding-bottom: 2px; cursor: pointer; text-decoration: none; }
+.cta-band { background: #F5F8FF; padding: 80px 56px; border-top: 1px solid #DCE7F7; }
+.cta-inner { max-width: 600px; margin: 0 auto; text-align: center; }
+.cta-band h2 { font-size: 26px; font-weight: 700; color: #0A1628; margin-bottom: 12px; }
+.cta-band p { font-size: 15px; color: #5F5E5A; line-height: 1.65; margin-bottom: 32px; }
+.cta-actions { display: flex; gap: 12px; justify-content: center; align-items: center; }
+.cta-btn-main { background: #0C55F2; color: #fff; font-size: 14px; font-weight: 600; padding: 13px 30px; border-radius: 7px; border: none; cursor: pointer; text-decoration: none; display: inline-block; }
+.cta-btn-secondary { background: transparent; color: #5F5E5A; font-size: 14px; padding: 13px 24px; border-radius: 7px; border: 1px solid #B4B2A9; cursor: pointer; text-decoration: none; display: inline-block; }
+.cta-sub { font-size: 12px; color: #B4B2A9; margin-top: 18px; }
+footer { background: #0A1628; padding: 44px 56px 28px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
+.footer-brand { color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.9; }
+.footer-brand strong { color: #fff; font-size: 14px; display: block; margin-bottom: 6px; }
+.footer-links { display: flex; gap: 36px; }
+.footer-col h4 { color: rgba(255,255,255,0.35); font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.3); font-size: 12px; margin-bottom: 8px; text-decoration: none; }
+.footer-col a:hover { color: rgba(255,255,255,0.65); }
+.footer-legal { font-size: 11px; color: rgba(255,255,255,0.2); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<nav class="nav-wrap">
+  <div class="nav-logo"><a href="index.html"><img src="data:image/png;base64,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" alt="GLS.AI"></a></div>
+  <div class="nav-links">
+    <a class="nav-link active" href="lenders-investors.html">For lenders &amp; investors</a>
+    <a class="nav-link" href="#">About GLS</a>
+    <a class="nav-link" href="#">Resources</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn-ghost" href="#">Borrower login</a>
+    <a class="btn-primary" href="#">Lender / investor login</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">For lenders &amp; investors</div>
+    <h1>Purpose-built for the loans you work with.</h1>
+    <p>GLS was designed from the ground up to service RTL, DSCR, construction, and SBCRE loans — the products legacy servicers were never built to handle well.</p>
+    <div class="hero-actions">
+      <a class="btn-hero-primary" href="#contact">See how it works</a>
+      <a class="btn-hero-ghost" href="#">Lender / investor login →</a>
+    </div>
+    <div class="hero-cred">
+      <div class="cred-item"><strong>DBRS Morningstar rated</strong>RTL — Bridge, Dutch &amp; Non-Dutch</div>
+      <div class="cred-item"><strong>Licensed in all 50 states</strong>Business-purpose loan servicing</div>
+      <div class="cred-item"><strong>Rated servicer</strong>Active on multiple securitizations</div>
+      <div class="cred-item"><strong>Built by industry veterans</strong>Avg 15+ years in mortgage servicing</div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="problem-inner">
+    <div class="section-tag">The challenge</div>
+    <div class="section-headline">Why legacy servicers fall short</div>
+    <p class="section-sub">Platforms built for traditional mortgages can't handle the complexity of RTL, DSCR, and construction loans — and the workarounds create real costs for everyone.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-label">Draw management</div>
+        <div class="problem-title">Slow, manual, error-prone</div>
+        <div class="problem-body">Draw requests, funding, and updates happen outside the system — creating reconciliation headaches, delays, and a borrower experience that reflects poorly on everyone in the chain.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-label">Investor experience</div>
+        <div class="problem-title">Limited, outdated data</div>
+        <div class="problem-body">Batch files and end-of-day snapshots mean investors are always working with yesterday's picture of their portfolio. Real-time visibility is an afterthought, not a feature.</div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-label">Operational risk</div>
+        <div class="problem-title">Off-platform activity</div>
+        <div class="problem-body">Key servicing activities happen outside the system — in spreadsheets and inboxes. Errors are inevitable and expensive to unwind.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="platform" class="platform">
+  <div class="platform-inner">
+    <div class="platform-intro">
+      <div class="platform-text">
+        <div class="section-tag">The GLS platform</div>
+        <h2>One platform. No overlays.</h2>
+        <p>Arda — our proprietary servicing platform — eliminates the patchwork of third-party systems that legacy servicers rely on. Every transaction, report, and interaction flows through a single integrated system, in real time.</p>
+      </div>
+      <div class="platform-bullets">
+        <div class="platform-bullet">
+          <div class="bullet-dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>
+          <div class="bullet-text"><strong>Zero reconciliation</strong><span>Bank accounts, general ledger, and servicing platform sync in real time. Every dollar tracked automatically.</span></div>
+        </div>
+        <div class="platform-bullet">
+          <div class="bullet-dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>
+          <div class="bullet-text"><strong>No third-party overlays</strong><span>Accounting, reporting, compliance, and workflows are native to Arda — not bolted on from outside systems.</span></div>
+        </div>
+        <div class="platform-bullet">
+          <div class="bullet-dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>
+          <div class="bullet-text"><strong>Real-time data, always</strong><span>Every portal, report, and API feed pulls live data — not batch files or end-of-day snapshots.</span></div>
+        </div>
+        <div class="platform-bullet">
+          <div class="bullet-dot"><svg viewBox="0 0 10 10"><polyline points="2,5 4,7 8,3"/></svg></div>
+          <div class="bullet-text"><strong>Built-in compliance</strong><span>Rules-based workflows prevent violations before they occur — not after they've already created exposure.</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="arda-diagram">
+      <div class="arda-core">
+        <div class="arda-core-title">— Arda —</div>
+        <div class="arda-core-sub">GLS proprietary servicing platform &nbsp;·&nbsp; single source of truth</div>
+      </div>
+      <div class="arda-tier">
+        <div class="arda-tile"><div class="arda-tile-title">Bank accounts</div><div class="arda-tile-sub">Real-time transaction sync across all accounts</div></div>
+        <div class="arda-tile"><div class="arda-tile-title">General ledger</div><div class="arda-tile-sub">Built directly in Arda. Automatic reconciliation.</div></div>
+        <div class="arda-tile"><div class="arda-tile-title">Servicing platform</div><div class="arda-tile-sub">Payments, draws, remittances &amp; default — all in one</div></div>
+      </div>
+      <div class="arda-sync-label">↕ Three-way synchronized ledger ↕</div>
+      <div class="arda-tier">
+        <div class="arda-tile-light"><div class="arda-tile-title">Investor portal</div><div class="arda-tile-sub">Real-time, loan-level data for lenders &amp; investors</div></div>
+        <div class="arda-tile-light"><div class="arda-tile-title">Borrower portal</div><div class="arda-tile-sub">Self-service draws, payments, extensions &amp; live chat</div></div>
+        <div class="arda-tile-light"><div class="arda-tile-title">API data feeds</div><div class="arda-tile-sub">Portfolio data on your schedule — real-time integration</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="draws" class="draws">
+  <div class="draws-inner">
+    <div class="section-tag">Draw management</div>
+    <div class="section-headline">Same-day funding. Full QC at every step.</div>
+    <p class="section-sub">Configurable, end-to-end draw workflows integrated with your draw management platform. GLS funds within 24 hours of full approval — with a complete audit trail at every step.</p>
+    <div class="draws-flow">
+      <div class="flow-step">
+        <div class="flow-step-num">Step 01</div>
+        <h3>Draw initiation</h3>
+        <ul>
+          <li>Borrower portal submission</li>
+          <li>Lender direct entry</li>
+          <li>Investor-initiated requests</li>
+          <li>All channels sync to Arda in real time</li>
+        </ul>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">Step 02</div>
+        <h3>Review &amp; approval</h3>
+        <ul>
+          <li>Lender reviews against approved budget &amp; scope</li>
+          <li>Inspection ordered and reviewed</li>
+          <li>Budget allocation confirmed</li>
+          <li>Configurable approval authority per investor</li>
+        </ul>
+      </div>
+      <div class="flow-step">
+        <div class="flow-step-num">Step 03</div>
+        <h3>GLS funding</h3>
+        <ul>
+          <li>Loan status &amp; payoff conflict validation</li>
+          <li>Fee verification &amp; net funding calculation</li>
+          <li>Disbursement within 24 hours of approval</li>
+          <li>Full audit trail in Arda</li>
+        </ul>
+      </div>
+    </div>
+    <div class="draws-callout">
+      <div class="draws-stat"><div class="draws-stat-val">Same-day / 24hr</div><div class="draws-stat-label">Funding after full approval</div></div>
+      <div class="draws-stat"><div class="draws-stat-val">Fully automated</div><div class="draws-stat-label">End-to-end workflow, no manual steps</div></div>
+      <div class="draws-stat"><div class="draws-stat-val">Multi-channel</div><div class="draws-stat-label">Borrower, lender &amp; investor-initiated</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="reporting">
+  <div class="reporting-inner">
+    <div class="section-tag">Investor reporting</div>
+    <div class="section-headline">Your data, your way, in real time.</div>
+    <p class="section-sub">GLS provides multiple ways to stay informed — from a real-time loan-level portal to a direct API feed into your internal systems. No waiting for reports that are already out of date.</p>
+    <div class="reporting-grid">
+      <div class="report-card">
+        <div class="report-icon"><svg viewBox="0 0 20 20"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 10h6M7 13h4"/></svg></div>
+        <h3>Investor portal</h3>
+        <ul>
+          <li>Real-time, loan-level access to your portfolio</li>
+          <li>General loan information &amp; borrower detail</li>
+          <li>Draw history &amp; real-time status</li>
+          <li>Payment status &amp; payment history</li>
+        </ul>
+      </div>
+      <div class="report-card">
+        <div class="report-icon"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="7"/><path d="M10 6v4l3 3"/></svg></div>
+        <h3>API data feed</h3>
+        <ul>
+          <li>Real-time access to all investor portal data</li>
+          <li>Updated on your schedule, not ours</li>
+          <li>Feed directly into your internal systems</li>
+          <li>No data tapes, no manual exports</li>
+        </ul>
+      </div>
+      <div class="report-card">
+        <div class="report-icon"><svg viewBox="0 0 20 20"><rect x="3" y="4" width="14" height="13" rx="2"/><path d="M3 9h14M8 4V3M12 4V3"/></svg></div>
+        <h3>Daily reporting</h3>
+        <ul>
+          <li>Automated daily report delivery</li>
+          <li>EOD status for all loan attributes</li>
+          <li>Delinquency, payment status &amp; UPB</li>
+          <li>Draw reserve amounts &amp; construction progress</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="products-inner">
+    <div class="section-tag">Loan products</div>
+    <div class="section-headline">Servicing the full spectrum of business-purpose lending.</div>
+    <p class="section-sub">GLS is purpose-built for business-purpose loans. Our platform handles the complexity of each product type natively — not through manual workarounds that create risk downstream.</p>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-dot"></div><div><div class="product-name">Residential Transition Loans (RTL)</div><div class="product-desc">Bridge and construction loans including Dutch and Non-Dutch structures. DBRS Morningstar rated.</div></div></div>
+      <div class="product-card"><div class="product-dot"></div><div><div class="product-name">DSCR Loans</div><div class="product-desc">Debt service coverage ratio loans for investment property portfolios. DBRS rating in progress for 2026.</div></div></div>
+      <div class="product-card"><div class="product-dot"></div><div><div class="product-name">Construction Loans</div><div class="product-desc">Full draw management with configurable workflows, multi-channel initiation, and 24-hour funding.</div></div></div>
+      <div class="product-card"><div class="product-dot"></div><div><div class="product-name">Small Balance CRE (SBCRE)</div><div class="product-desc">Small balance commercial real estate loans serviced on the same integrated Arda platform.</div></div></div>
+      <div class="product-card"><div class="product-dot coming"></div><div><div class="product-name">Consumer HELOC <span class="product-badge">Launching 2026</span></div><div class="product-desc">Home equity lines of credit — expanding GLS consumer licensing state by state.</div></div></div>
+      <div class="product-card"><div class="product-dot coming"></div><div><div class="product-name">Closed-End Second Liens <span class="product-badge">Launching 2026</span></div><div class="product-desc">CES servicing capabilities in development alongside consumer state licensing expansion.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-curiosity">
+  <div class="pricing-inner">
+    <div class="pricing-eyebrow">One more thing</div>
+    <div class="pricing-headline">Most of our clients are surprised by our fee structure.</div>
+    <p class="pricing-body">We built GLS to prove that better technology doesn't have to mean a bigger bill. Our servicer fees are straightforward, fully disclosed, and — in our experience — consistently come in below what our clients were paying before.</p>
+    <p class="pricing-hook">"Why didn't we find you sooner?" — something we hear a lot on first calls.</p>
+    <a class="pricing-cta-link" href="#contact">Curious? Let's talk numbers. →</a>
+  </div>
+</section>
+
+<section id="contact" class="cta-band">
+  <div class="cta-inner">
+    <h2>Worth a conversation?</h2>
+    <p>If what you've seen here looks like a better fit for your portfolio, we'd be glad to walk you through the platform — and show you exactly what working with GLS looks like in practice.</p>
+    <div class="cta-actions">
+      <a class="cta-btn-main" href="mailto:InvestorRelations@gls.ai">Get in touch</a>
+      <a class="cta-btn-secondary" href="#">Lender / investor login</a>
+    </div>
+    <div class="cta-sub">Or reach us directly at InvestorRelations@gls.ai</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>GLS Solutions LLC</strong>
+      115 Wilcox Street, Suite 220, Office 309<br>
+      Castle Rock, CO 80104 &nbsp;|&nbsp; info@gls.ai
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="lenders-investors.html">For lenders &amp; investors</a>
+        <a href="#">About GLS</a>
+        <a href="#">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Access</h4>
+        <a href="#">Borrower login</a>
+        <a href="#">Lender / investor login</a>
+        <a href="#contact">Get in touch</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+        <a href="#">Licensing</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">
+    GLS Solutions LLC — NMLS #2486416 &nbsp;|&nbsp; GLS CA Inc. — NMLS #2742851 &nbsp;|&nbsp; CA DRE #02291015<br>
+    &copy; 2026 GLS Solutions, LLC. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
