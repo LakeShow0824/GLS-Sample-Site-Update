@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About GLS — GLS Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Manrope', Arial, sans-serif; color: #0A1628; }
+
+/* NAV */
+.nav-wrap { background: #fff; padding: 0 56px; display: flex; align-items: center; justify-content: space-between; height: 64px; border-bottom: 1px solid #DCE7F7; position: sticky; top: 0; z-index: 100; }
+.nav-logo img { height: 36px; width: auto; display: block; }
+.nav-links { display: flex; gap: 28px; }
+.nav-link { color: #5F5E5A; font-size: 13px; font-weight: 500; text-decoration: none; }
+.nav-link:hover, .nav-link.active { color: #0C55F2; }
+.nav-actions { display: flex; gap: 10px; align-items: center; }
+.btn-ghost { color: #0A1628; font-size: 12px; font-weight: 600; padding: 7px 14px; border: 1px solid #B4B2A9; border-radius: 6px; background: transparent; cursor: pointer; text-decoration: none; display: inline-block; }
+.btn-primary { color: #fff; font-size: 12px; font-weight: 600; padding: 7px 14px; border: none; border-radius: 6px; background: #0C55F2; cursor: pointer; text-decoration: none; display: inline-block; }
+
+/* HERO */
+.hero { background: #0A1628; padding: 80px 56px 88px; }
+.hero-inner { max-width: 840px; margin: 0 auto; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #4A90D9; margin-bottom: 20px; }
+.hero h1 { font-size: 40px; font-weight: 800; color: #fff; line-height: 1.15; margin-bottom: 16px; max-width: 640px; }
+.hero p { font-size: 17px; font-weight: 400; color: rgba(255,255,255,0.6); line-height: 1.65; max-width: 560px; }
+
+/* SHARED */
+.section-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #0C55F2; margin-bottom: 12px; }
+.section-headline { font-size: 28px; font-weight: 800; color: #0A1628; margin-bottom: 16px; line-height: 1.2; }
+
+/* WHO WE ARE */
+.who { background: #fff; padding: 80px 56px 72px; border-bottom: 1px solid #DCE7F7; }
+.who-inner { max-width: 840px; margin: 0 auto; }
+.who-text { margin-bottom: 40px; }
+.who-text p { font-size: 15px; font-weight: 400; color: #5F5E5A; line-height: 1.75; max-width: 680px; }
+.who-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.fact-tile { background: #F5F8FF; border: 1px solid #DCE7F7; border-radius: 10px; padding: 24px; aspect-ratio: 1 / 1; display: flex; flex-direction: column; justify-content: space-between; }
+.fact-label { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #4A90D9; }
+.fact-value { font-size: 14px; font-weight: 600; color: #0A1628; line-height: 1.45; }
+
+/* WHY WE BUILT GLS */
+.why { background: #F5F8FF; padding: 80px 56px; }
+.why-inner { max-width: 840px; margin: 0 auto; }
+.why-body { margin-top: 28px; display: flex; flex-direction: column; gap: 20px; }
+.why-para { font-size: 16px; font-weight: 400; color: #3A3A3A; line-height: 1.8; }
+.why-para.accent { font-size: 17px; font-weight: 600; color: #0A1628; border-left: 3px solid #0C55F2; padding-left: 20px; }
+
+/* PHILOSOPHY */
+.philosophy { background: #fff; padding: 80px 56px; border-top: 1px solid #DCE7F7; }
+.philosophy-inner { max-width: 840px; margin: 0 auto; }
+
+.phi-statements { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; margin-bottom: 36px; }
+.phi-statement { background: #0A1628; border-radius: 12px; padding: 36px 32px; }
+.phi-statement-text { font-size: 22px; font-weight: 800; color: #fff; line-height: 1.3; }
+.phi-statement-text .highlight { color: #0C55F2; }
+
+.phi-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.phi-tile { background: #F5F8FF; border: 1px solid #DCE7F7; border-radius: 10px; padding: 28px 24px; }
+.phi-tile-icon { width: 32px; height: 32px; background: #DCE7F7; border-radius: 7px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
+.phi-tile-icon svg { width: 16px; height: 16px; fill: none; stroke: #0C55F2; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.phi-tile-title { font-size: 14px; font-weight: 700; color: #0A1628; margin-bottom: 8px; }
+.phi-tile-body { font-size: 13px; font-weight: 400; color: #5F5E5A; line-height: 1.65; }
+
+/* THREE AUDIENCES */
+.audiences { background: #0A1628; padding: 80px 56px; }
+.audiences-inner { max-width: 840px; margin: 0 auto; }
+.audiences .section-tag { color: #4A90D9; }
+.audiences-headline { font-size: 26px; font-weight: 800; color: #fff; margin-bottom: 40px; line-height: 1.2; }
+.audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.audience-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 32px 28px; }
+.audience-label { font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: #4A90D9; margin-bottom: 14px; }
+.audience-promise { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 12px; line-height: 1.4; }
+.audience-detail { font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+/* CREDENTIALS */
+.credentials { background: #F5F8FF; padding: 64px 56px; border-top: 1px solid #DCE7F7; }
+.credentials-inner { max-width: 840px; margin: 0 auto; }
+.cred-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.cred-card { background: #fff; border: 1px solid #DCE7F7; border-radius: 10px; padding: 24px; }
+.cred-icon { width: 36px; height: 36px; background: #DCE7F7; border-radius: 8px; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
+.cred-icon svg { width: 18px; height: 18px; fill: none; stroke: #185FA5; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.cred-title { font-size: 14px; font-weight: 700; color: #0A1628; margin-bottom: 5px; }
+.cred-desc { font-size: 13px; font-weight: 400; color: #5F5E5A; line-height: 1.55; }
+
+/* CAREERS */
+.careers { background: #fff; padding: 80px 56px; border-top: 1px solid #DCE7F7; }
+.careers-inner { max-width: 840px; margin: 0 auto; }
+.careers-card { background: #F5F8FF; border: 1.5px solid #DCE7F7; border-radius: 12px; padding: 48px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+.careers-text h3 { font-size: 22px; font-weight: 800; color: #0A1628; margin-bottom: 10px; }
+.careers-text p { font-size: 14px; font-weight: 400; color: #5F5E5A; line-height: 1.7; max-width: 480px; }
+.careers-btn { display: inline-block; background: #0A1628; color: #fff; font-size: 13px; font-weight: 700; padding: 12px 24px; border-radius: 7px; text-decoration: none; white-space: nowrap; }
+
+/* FOOTER */
+footer { background: #0A1628; padding: 44px 56px 28px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 20px; }
+.footer-brand { color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 400; line-height: 1.9; }
+.footer-brand strong { color: #fff; font-size: 14px; font-weight: 700; display: block; margin-bottom: 6px; }
+.footer-links { display: flex; gap: 36px; }
+.footer-col h4 { color: rgba(255,255,255,0.35); font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; margin-bottom: 12px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.3); font-size: 12px; font-weight: 500; margin-bottom: 8px; text-decoration: none; }
+.footer-col a:hover { color: rgba(255,255,255,0.65); }
+.footer-legal { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.2); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<nav class="nav-wrap">
+  <div class="nav-logo"><a href="index.html"><img src="data:image/png;base64,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" alt="GLS"></a></div>
+  <div class="nav-links">
+    <a class="nav-link" href="lenders-investors.html">For lenders &amp; investors</a>
+    <a class="nav-link active" href="about.html">About GLS</a>
+    <a class="nav-link" href="#">Resources</a>
+  </div>
+  <div class="nav-actions">
+    <a class="btn-ghost" href="#">Borrower login</a>
+    <a class="btn-primary" href="#">Lender / investor login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">About GLS</div>
+    <h1>Built for the way lending works today.</h1>
+    <p>A loan servicer built from the ground up — not retrofitted from a platform designed for a different era.</p>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="who">
+  <div class="who-inner">
+    <div class="who-text">
+      <div class="section-tag">Who we are</div>
+      <div class="section-headline">A different kind of servicer.</div>
+      <p>GLS Solutions is a technology-forward loan servicer specializing in business-purpose real estate loans — including residential transition loans, DSCR loans, construction loans, and small balance commercial real estate. We were founded in 2023 and operate from our headquarters in Castle Rock, Colorado, with a special servicing office in Greenville, South Carolina.</p>
+    </div>
+    <div class="who-tiles">
+      <div class="fact-tile">
+        <div class="fact-label">Founded</div>
+        <div class="fact-value">2023 — built from scratch on modern infrastructure</div>
+      </div>
+      <div class="fact-tile">
+        <div class="fact-label">Headquarters</div>
+        <div class="fact-value">Castle Rock, CO with special servicing in Greenville, SC</div>
+      </div>
+      <div class="fact-tile">
+        <div class="fact-label">Licensing</div>
+        <div class="fact-value">Licensed in all 50 states for business-purpose loan servicing</div>
+      </div>
+      <div class="fact-tile">
+        <div class="fact-label">DBRS Approved</div>
+        <div class="fact-value">DBRS Morningstar approved servicer for RTL (Bridge, Dutch &amp; Non-Dutch)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE BUILT GLS -->
+<section class="why">
+  <div class="why-inner">
+    <div class="section-tag">Why we built GLS</div>
+    <div class="section-headline">Mortgage servicing got left behind.</div>
+    <div class="why-body">
+      <p class="why-para">Most loan servicers run on technology that is decades old. Years of patches, workarounds, and bolt-on additions have kept them running — but they haven't kept pace with the leaps in technology that every other part of the financial industry has embraced. Banking modernized. Payments became instant. Accounting software gave professionals real-time visibility into everything. Mortgage servicing didn't.</p>
+      <p class="why-para accent">We wouldn't ask a banking professional to run their work on decades-old systems. Borrowers, employees, and investors in mortgage servicing deserve the same standard everyone else takes for granted.</p>
+      <p class="why-para">GLS was built on that premise. We built our core technology from scratch — on modern infrastructure, designed for the way lending actually works today. Not patched. Not retrofitted. Built new, because that was the only way to get it right.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <div class="section-tag">Our philosophy</div>
+    <div class="phi-statements">
+      <div class="phi-statement">
+        <div class="phi-statement-text"><span class="highlight">Technology</span> should handle what it's good at.</div>
+      </div>
+      <div class="phi-statement">
+        <div class="phi-statement-text">Our <span class="highlight">People</span> will be there to handle what it can't.</div>
+      </div>
+    </div>
+    <div class="phi-tiles">
+      <div class="phi-tile">
+        <div class="phi-tile-icon"><svg viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" rx="2"/><path d="M5 8h6M8 5v6"/></svg></div>
+        <div class="phi-tile-title">Automate the routine</div>
+        <div class="phi-tile-body">Payment processing, reconciliation, compliance checks, document categorization, and draw workflows run automatically — so nothing falls through the cracks and nothing requires a manual workaround.</div>
+      </div>
+      <div class="phi-tile">
+        <div class="phi-tile-icon"><svg viewBox="0 0 16 16"><circle cx="8" cy="5" r="3"/><path d="M2 15c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div>
+        <div class="phi-tile-title">Hire for the human work</div>
+        <div class="phi-tile-body">We hire people who are good at what technology can't replace — communication, judgment, and accountability when a borrower's situation doesn't fit a formula.</div>
+      </div>
+      <div class="phi-tile">
+        <div class="phi-tile-icon"><svg viewBox="0 0 16 16"><path d="M2 12l4-4 3 3 5-6"/></svg></div>
+        <div class="phi-tile-title">Better tools, better outcomes</div>
+        <div class="phi-tile-body">When our team isn't fighting their own systems, they focus on the work that actually matters — and that's better for borrowers, better for investors, and better for the people doing the servicing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE AUDIENCES -->
+<section class="audiences">
+  <div class="audiences-inner">
+    <div class="section-tag">Who we serve</div>
+    <div class="audiences-headline">Built for everyone in the loan lifecycle.</div>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-label">Borrowers</div>
+        <div class="audience-promise">Self-service tools for what you can handle. A real person when you need one.</div>
+        <div class="audience-detail">Manage your account, make payments, submit draw requests, and get answers — without waiting on hold. And when you need to talk to someone, you reach a person who knows your loan.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-label">Investors &amp; lenders</div>
+        <div class="audience-promise">Real-time data, not yesterday's report.</div>
+        <div class="audience-detail">Visibility into your portfolio the moment something changes. Loan-level detail, draw status, payment history, and portfolio reporting — live, not batched.</div>
+      </div>
+      <div class="audience-card">
+        <div class="audience-label">Our team</div>
+        <div class="audience-promise">Modern tools that eliminate the manual work.</div>
+        <div class="audience-detail">Our people work in a single integrated system — not across spreadsheets, inboxes, and legacy platforms. That means fewer errors, faster responses, and a job that's actually about helping people.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+  <div class="credentials-inner">
+    <div class="section-tag">Our credentials</div>
+    <div class="section-headline">Built to meet institutional standards.</div>
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-icon"><svg viewBox="0 0 18 18"><path d="M9 2l2 5h5l-4 3 1.5 5L9 12l-4.5 3L6 10 2 7h5z"/></svg></div>
+        <div class="cred-title">DBRS Morningstar approved servicer</div>
+        <div class="cred-desc">DBRS Morningstar approved servicer for residential transition loan servicing — Bridge, Dutch, and Non-Dutch construction structures.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon"><svg viewBox="0 0 18 18"><rect x="3" y="3" width="12" height="12" rx="2"/><path d="M6 9l2 2 4-4"/></svg></div>
+        <div class="cred-title">Licensed in all 50 states</div>
+        <div class="cred-desc">Licensed to service business-purpose mortgage loans nationwide. Consumer loan licensing expansion underway, targeting Q4 2026.</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-icon"><svg viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><path d="M9 5v4l3 2"/></svg></div>
+        <div class="cred-title">Active securitization servicer</div>
+        <div class="cred-desc">Named servicer on multiple active rated securitizations. Experienced working within trust structures, with trustees, and to investor reporting requirements.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="careers">
+  <div class="careers-inner">
+    <div class="section-tag">Careers</div>
+    <div class="careers-card">
+      <div class="careers-text">
+        <h3>Join a team building something new.</h3>
+        <p>We're a growing company building a servicing platform that actually works the way it should. If you want to do meaningful work with modern tools — and be part of a team that's changing how an industry operates — we'd like to hear from you.</p>
+      </div>
+      <a class="careers-btn" href="#">View open positions →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>GLS Solutions LLC</strong>
+      115 Wilcox Street, Suite 220, Office 309<br>
+      Castle Rock, CO 80104 &nbsp;|&nbsp; info@gls.ai
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="lenders-investors.html">For lenders &amp; investors</a>
+        <a href="about.html">About GLS</a>
+        <a href="#">Resources</a>
+      </div>
+      <div class="footer-col">
+        <h4>Access</h4>
+        <a href="#">Borrower login</a>
+        <a href="#">Lender / investor login</a>
+        <a href="lenders-investors.html#contact">Get in touch</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of use</a>
+        <a href="#">Licensing</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-legal">
+    GLS Solutions LLC — NMLS #2486416 &nbsp;|&nbsp; GLS CA Inc. — NMLS #2742851 &nbsp;|&nbsp; CA DRE #02291015<br>
+    &copy; 2026 GLS Solutions, LLC. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
